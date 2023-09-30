@@ -1,0 +1,26 @@
+baseURL = 'https://little-railways.com/'
+languageCode = 'en'
+title = 'My little railways'
+theme = 'ananke'
+
+enableRobotsTXT = true
+Paginate = 10
+
+[languages]
+  [languages.en]
+    baseURL = 'https://little-railways.com/'
+    languageName = 'English'
+    languageCode = 'es'
+    title = 'My little railways'
+    weight = 1 
+  [languages.es]
+    baseURL = 'https://little-railways.es'
+    languageName = 'Español'
+    languageCode = 'es'
+    title = 'My little railways'
+    weight = 2
+
+[sitemap]
+  changefreq = "daily"
+  priority = 0.5
+  filename = "sitemap.xml"
