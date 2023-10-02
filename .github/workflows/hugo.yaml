@@ -70,7 +70,7 @@ jobs:
         with:
           source-directory: './public/es'
           destination-github-username: 'ricard2k'
-          destination-repository-name: 'litle-railways.es'
+          destination-repository-name: 'little-railways.es'
           user-email: 6473124+ricard2k@users.noreply.github.com
           target-branch: pages
 
