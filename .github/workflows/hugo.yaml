@@ -59,12 +59,22 @@ jobs:
           hugo \
             --gc \
             --minify           
-      - name: Upload artifact
+      - name: Upload litle-railways.com artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./public/en
+          path: ./public/en 
+      - name: Push to litle-railways.es
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.LITTLE_RAILWAYS_ES_SSH_DEPLOY }}
+        with:
+          source-directory: './public/es'
+          destination-github-username: 'ricard2k'
+          destination-repository-name: 'litle-railways.es'
+          user-email: 6473124+ricard2k@users.noreply.github.com
+          target-branch: pages
 
-  # Deployment job
+  # Deployment job for litle-railways.com (our own domain)
   deploy:
     environment:
       name: github-pages
@@ -75,3 +85,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+  
